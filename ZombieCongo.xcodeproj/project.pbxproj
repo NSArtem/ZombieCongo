@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC1B829418E7FBB100431BE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829318E7FBB100431BE2 /* Foundation.framework */; };
+		AC1B829618E7FBB100431BE2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829518E7FBB100431BE2 /* CoreGraphics.framework */; };
+		AC1B829818E7FBB100431BE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829718E7FBB100431BE2 /* UIKit.framework */; };
+		AC1B829A18E7FBB100431BE2 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829918E7FBB100431BE2 /* SpriteKit.framework */; };
+		AC1B82A018E7FBB100431BE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC1B829E18E7FBB100431BE2 /* InfoPlist.strings */; };
+		AC1B82A218E7FBB100431BE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B82A118E7FBB100431BE2 /* main.m */; };
+		AC1B82A618E7FBB100431BE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B82A518E7FBB100431BE2 /* AppDelegate.m */; };
+		AC1B82A918E7FBB100431BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1B82A718E7FBB100431BE2 /* Main.storyboard */; };
+		AC1B82AC18E7FBB100431BE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B82AB18E7FBB100431BE2 /* ViewController.m */; };
+		AC1B82AF18E7FBB100431BE2 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B82AE18E7FBB100431BE2 /* MyScene.m */; };
+		AC1B82B118E7FBB100431BE2 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1B82B018E7FBB100431BE2 /* Spaceship.png */; };
+		AC1B82B318E7FBB100431BE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1B82B218E7FBB100431BE2 /* Images.xcassets */; };
+		AC1B82BA18E7FBB100431BE2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B82B918E7FBB100431BE2 /* XCTest.framework */; };
+		AC1B82BB18E7FBB100431BE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829318E7FBB100431BE2 /* Foundation.framework */; };
+		AC1B82BC18E7FBB100431BE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1B829718E7FBB100431BE2 /* UIKit.framework */; };
+		AC1B82C418E7FBB100431BE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC1B82C218E7FBB100431BE2 /* InfoPlist.strings */; };
+		AC1B82C618E7FBB100431BE2 /* ZombieCongoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B82C518E7FBB100431BE2 /* ZombieCongoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC1B82BD18E7FBB100431BE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC1B828818E7FBB100431BE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC1B828F18E7FBB100431BE2;
+			remoteInfo = ZombieCongo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC1B829018E7FBB100431BE2 /* ZombieCongo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieCongo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1B829318E7FBB100431BE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AC1B829518E7FBB100431BE2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AC1B829718E7FBB100431BE2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AC1B829918E7FBB100431BE2 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		AC1B829D18E7FBB100431BE2 /* ZombieCongo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZombieCongo-Info.plist"; sourceTree = "<group>"; };
+		AC1B829F18E7FBB100431BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC1B82A118E7FBB100431BE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC1B82A318E7FBB100431BE2 /* ZombieCongo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZombieCongo-Prefix.pch"; sourceTree = "<group>"; };
+		AC1B82A418E7FBB100431BE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC1B82A518E7FBB100431BE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC1B82A818E7FBB100431BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC1B82AA18E7FBB100431BE2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AC1B82AB18E7FBB100431BE2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AC1B82AD18E7FBB100431BE2 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		AC1B82AE18E7FBB100431BE2 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		AC1B82B018E7FBB100431BE2 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		AC1B82B218E7FBB100431BE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AC1B82B818E7FBB100431BE2 /* ZombieCongoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZombieCongoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1B82B918E7FBB100431BE2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AC1B82C118E7FBB100431BE2 /* ZombieCongoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZombieCongoTests-Info.plist"; sourceTree = "<group>"; };
+		AC1B82C318E7FBB100431BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC1B82C518E7FBB100431BE2 /* ZombieCongoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZombieCongoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC1B828D18E7FBB100431BE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B829618E7FBB100431BE2 /* CoreGraphics.framework in Frameworks */,
+				AC1B829818E7FBB100431BE2 /* UIKit.framework in Frameworks */,
+				AC1B829A18E7FBB100431BE2 /* SpriteKit.framework in Frameworks */,
+				AC1B829418E7FBB100431BE2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC1B82B518E7FBB100431BE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B82BA18E7FBB100431BE2 /* XCTest.framework in Frameworks */,
+				AC1B82BC18E7FBB100431BE2 /* UIKit.framework in Frameworks */,
+				AC1B82BB18E7FBB100431BE2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC1B828718E7FBB100431BE2 = {
+			isa = PBXGroup;
+			children = (
+				AC1B829B18E7FBB100431BE2 /* ZombieCongo */,
+				AC1B82BF18E7FBB100431BE2 /* ZombieCongoTests */,
+				AC1B829218E7FBB100431BE2 /* Frameworks */,
+				AC1B829118E7FBB100431BE2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC1B829118E7FBB100431BE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B829018E7FBB100431BE2 /* ZombieCongo.app */,
+				AC1B82B818E7FBB100431BE2 /* ZombieCongoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC1B829218E7FBB100431BE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B829318E7FBB100431BE2 /* Foundation.framework */,
+				AC1B829518E7FBB100431BE2 /* CoreGraphics.framework */,
+				AC1B829718E7FBB100431BE2 /* UIKit.framework */,
+				AC1B829918E7FBB100431BE2 /* SpriteKit.framework */,
+				AC1B82B918E7FBB100431BE2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC1B829B18E7FBB100431BE2 /* ZombieCongo */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B82A418E7FBB100431BE2 /* AppDelegate.h */,
+				AC1B82A518E7FBB100431BE2 /* AppDelegate.m */,
+				AC1B82A718E7FBB100431BE2 /* Main.storyboard */,
+				AC1B82AA18E7FBB100431BE2 /* ViewController.h */,
+				AC1B82AB18E7FBB100431BE2 /* ViewController.m */,
+				AC1B82AD18E7FBB100431BE2 /* MyScene.h */,
+				AC1B82AE18E7FBB100431BE2 /* MyScene.m */,
+				AC1B82B018E7FBB100431BE2 /* Spaceship.png */,
+				AC1B82B218E7FBB100431BE2 /* Images.xcassets */,
+				AC1B829C18E7FBB100431BE2 /* Supporting Files */,
+			);
+			path = ZombieCongo;
+			sourceTree = "<group>";
+		};
+		AC1B829C18E7FBB100431BE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B829D18E7FBB100431BE2 /* ZombieCongo-Info.plist */,
+				AC1B829E18E7FBB100431BE2 /* InfoPlist.strings */,
+				AC1B82A118E7FBB100431BE2 /* main.m */,
+				AC1B82A318E7FBB100431BE2 /* ZombieCongo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC1B82BF18E7FBB100431BE2 /* ZombieCongoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B82C518E7FBB100431BE2 /* ZombieCongoTests.m */,
+				AC1B82C018E7FBB100431BE2 /* Supporting Files */,
+			);
+			path = ZombieCongoTests;
+			sourceTree = "<group>";
+		};
+		AC1B82C018E7FBB100431BE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B82C118E7FBB100431BE2 /* ZombieCongoTests-Info.plist */,
+				AC1B82C218E7FBB100431BE2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC1B828F18E7FBB100431BE2 /* ZombieCongo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC1B82C918E7FBB100431BE2 /* Build configuration list for PBXNativeTarget "ZombieCongo" */;
+			buildPhases = (
+				AC1B828C18E7FBB100431BE2 /* Sources */,
+				AC1B828D18E7FBB100431BE2 /* Frameworks */,
+				AC1B828E18E7FBB100431BE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZombieCongo;
+			productName = ZombieCongo;
+			productReference = AC1B829018E7FBB100431BE2 /* ZombieCongo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC1B82B718E7FBB100431BE2 /* ZombieCongoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC1B82CC18E7FBB100431BE2 /* Build configuration list for PBXNativeTarget "ZombieCongoTests" */;
+			buildPhases = (
+				AC1B82B418E7FBB100431BE2 /* Sources */,
+				AC1B82B518E7FBB100431BE2 /* Frameworks */,
+				AC1B82B618E7FBB100431BE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC1B82BE18E7FBB100431BE2 /* PBXTargetDependency */,
+			);
+			name = ZombieCongoTests;
+			productName = ZombieCongoTests;
+			productReference = AC1B82B818E7FBB100431BE2 /* ZombieCongoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC1B828818E7FBB100431BE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Artem Abramov";
+				TargetAttributes = {
+					AC1B82B718E7FBB100431BE2 = {
+						TestTargetID = AC1B828F18E7FBB100431BE2;
+					};
+				};
+			};
+			buildConfigurationList = AC1B828B18E7FBB100431BE2 /* Build configuration list for PBXProject "ZombieCongo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC1B828718E7FBB100431BE2;
+			productRefGroup = AC1B829118E7FBB100431BE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC1B828F18E7FBB100431BE2 /* ZombieCongo */,
+				AC1B82B718E7FBB100431BE2 /* ZombieCongoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC1B828E18E7FBB100431BE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B82A018E7FBB100431BE2 /* InfoPlist.strings in Resources */,
+				AC1B82B318E7FBB100431BE2 /* Images.xcassets in Resources */,
+				AC1B82B118E7FBB100431BE2 /* Spaceship.png in Resources */,
+				AC1B82A918E7FBB100431BE2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC1B82B618E7FBB100431BE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B82C418E7FBB100431BE2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC1B828C18E7FBB100431BE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B82AF18E7FBB100431BE2 /* MyScene.m in Sources */,
+				AC1B82AC18E7FBB100431BE2 /* ViewController.m in Sources */,
+				AC1B82A618E7FBB100431BE2 /* AppDelegate.m in Sources */,
+				AC1B82A218E7FBB100431BE2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC1B82B418E7FBB100431BE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC1B82C618E7FBB100431BE2 /* ZombieCongoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC1B82BE18E7FBB100431BE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC1B828F18E7FBB100431BE2 /* ZombieCongo */;
+			targetProxy = AC1B82BD18E7FBB100431BE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC1B829E18E7FBB100431BE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC1B829F18E7FBB100431BE2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AC1B82A718E7FBB100431BE2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC1B82A818E7FBB100431BE2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC1B82C218E7FBB100431BE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC1B82C318E7FBB100431BE2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC1B82C718E7FBB100431BE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC1B82C818E7FBB100431BE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC1B82CA18E7FBB100431BE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZombieCongo/ZombieCongo-Prefix.pch";
+				INFOPLIST_FILE = "ZombieCongo/ZombieCongo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AC1B82CB18E7FBB100431BE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZombieCongo/ZombieCongo-Prefix.pch";
+				INFOPLIST_FILE = "ZombieCongo/ZombieCongo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AC1B82CD18E7FBB100431BE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZombieCongo.app/ZombieCongo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZombieCongo/ZombieCongo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ZombieCongoTests/ZombieCongoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AC1B82CE18E7FBB100431BE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZombieCongo.app/ZombieCongo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZombieCongo/ZombieCongo-Prefix.pch";
+				INFOPLIST_FILE = "ZombieCongoTests/ZombieCongoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC1B828B18E7FBB100431BE2 /* Build configuration list for PBXProject "ZombieCongo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC1B82C718E7FBB100431BE2 /* Debug */,
+				AC1B82C818E7FBB100431BE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC1B82C918E7FBB100431BE2 /* Build configuration list for PBXNativeTarget "ZombieCongo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC1B82CA18E7FBB100431BE2 /* Debug */,
+				AC1B82CB18E7FBB100431BE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC1B82CC18E7FBB100431BE2 /* Build configuration list for PBXNativeTarget "ZombieCongoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC1B82CD18E7FBB100431BE2 /* Debug */,
+				AC1B82CE18E7FBB100431BE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC1B828818E7FBB100431BE2 /* Project object */;
+}
