@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     NSTimeInterval _lastUpdate;
     NSTimeInterval _deltaTime;
     CGPoint _zombieVelocity;
+    CGPoint _lastTapLocation;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -61,6 +62,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     [self updateFrameTimeLabel:_deltaTime];
     
     [self moveZombieWithVelocity:_zombieVelocity];
+    [self checkIfZombieReachedDestination:_lastTapLocation];
 }
 
 - (void)addFrameTimeLabel
@@ -95,6 +97,19 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     }];
 }
 
+- (void)checkIfZombieReachedDestination:(CGPoint)point
+{
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+    {
+        CGFloat deltaX = fabsf(node.position.x - _lastTapLocation.x);
+        CGFloat deltaY = fabsf(node.position.y - _lastTapLocation.y);
+        if (deltaX <= kVelocityZombie * _deltaTime &&
+            deltaY <= kVelocityZombie * _deltaTime)
+            _zombieVelocity = CGPointZero;
+    }];
+}
+
 - (void)spawnZombie
 {
     SKSpriteNode *zombie = [SKSpriteNode spriteNodeWithImageNamed:kSpriteZombie1];
@@ -124,6 +139,12 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
                                   sprite.position.y + amountToMove.y);
 }
 
+- (void)rotateSprite:(SKNode*)node
+         toDirection:(CGPoint)direction
+{
+    node.zRotation = atan2f(direction.y, direction.x);
+}
+
 - (void)addBackground
 {
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:kSpriteBackground];
@@ -145,6 +166,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     {
         _zombieVelocity = [self getVelocityOfNode:node
                                            toward:location];
+        [self rotateSprite:node toDirection:_zombieVelocity];
     }];
 }
 
@@ -158,6 +180,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
      {
          _zombieVelocity = [self getVelocityOfNode:node
                                             toward:location];
+                 [self rotateSprite:node toDirection:_zombieVelocity];
      }];
 }
 
@@ -170,7 +193,9 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
      {
          _zombieVelocity = [self getVelocityOfNode:node
                                             toward:location];
+                 [self rotateSprite:node toDirection:_zombieVelocity];
      }];
+    _lastTapLocation = location;
 }
 
 @end
