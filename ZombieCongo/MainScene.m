@@ -56,7 +56,6 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     else
         _deltaTime = 0;
     _lastUpdate = currentTime;
-    NSLog(@"%g millisecnods since last update", _deltaTime * 1000);
     [self updateFrameTimeLabel:_deltaTime];
     
     [self moveZombie];
