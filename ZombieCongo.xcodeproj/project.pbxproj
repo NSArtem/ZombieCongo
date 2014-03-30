@@ -30,6 +30,7 @@
 		AC1B82FF18E7FE5300431BE2 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC1B82E318E7FE5300431BE2 /* win.wav */; };
 		AC1B830D18E7FF0500431BE2 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1B830C18E7FF0500431BE2 /* Backgrounds.xcassets */; };
 		AC1B830F18E7FF3400431BE2 /* Sprites.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC1B830E18E7FF3400431BE2 /* Sprites.xcassets */; };
+		AC1B831218E8051A00431BE2 /* SKScene+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1B831118E8051A00431BE2 /* SKScene+Dimensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		AC1B82E318E7FE5300431BE2 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		AC1B830C18E7FF0500431BE2 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
 		AC1B830E18E7FF3400431BE2 /* Sprites.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sprites.xcassets; sourceTree = "<group>"; };
+		AC1B831018E8051A00431BE2 /* SKScene+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKScene+Dimensions.h"; sourceTree = "<group>"; };
+		AC1B831118E8051A00431BE2 /* SKScene+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Dimensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				AC1B82A718E7FBB100431BE2 /* Main.storyboard */,
+				AC1B831318E8051E00431BE2 /* Categories */,
 				AC1B82D118E7FCD400431BE2 /* ViewControllers */,
 				AC1B82D018E7FCCF00431BE2 /* Scenes */,
 				AC1B82CF18E7FCC900431BE2 /* Assets */,
@@ -213,6 +217,15 @@
 			);
 			name = Sounds;
 			path = Art/Sounds;
+			sourceTree = "<group>";
+		};
+		AC1B831318E8051E00431BE2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B831018E8051A00431BE2 /* SKScene+Dimensions.h */,
+				AC1B831118E8051A00431BE2 /* SKScene+Dimensions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +336,7 @@
 				AC1B82AC18E7FBB100431BE2 /* ViewController.m in Sources */,
 				AC1B82A618E7FBB100431BE2 /* AppDelegate.m in Sources */,
 				AC1B82A218E7FBB100431BE2 /* main.m in Sources */,
+				AC1B831218E8051A00431BE2 /* SKScene+Dimensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

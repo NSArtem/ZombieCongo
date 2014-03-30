@@ -7,14 +7,38 @@
 //
 
 #import "MainScene.h"
+#import "SKScene+Dimensions.h"
+
+static NSString* const kSpriteBackground = @"background";
+
+@interface MainScene()
+
+
+@end
 
 @implementation MainScene
 
--(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]){
-
+-(id)initWithSize:(CGSize)size
+{
+    if (self = [super initWithSize:size])
+    {
+        [self addBackground];
     }
     return self;
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+    
+}
+
+- (void)addBackground
+{
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:kSpriteBackground];
+    background.anchorPoint = CGPointZero;
+    background.name = kSpriteBackground;
+    [self addChild:background];
+    background.position = CGPointZero;
 }
 
 @end
