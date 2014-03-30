@@ -27,6 +27,17 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     MainSceneZ_MostTop = 100
 };
 
+static inline CGFloat ScalarShortestAngleBetween(
+                                                 const CGFloat a, const CGFloat b)
+{
+    CGFloat difference = b - a;
+    CGFloat angle = fmodf(difference, M_PI * 2);
+    if (angle >= M_PI) {
+        angle -= M_PI * 2;
+    }
+    return angle;
+}
+
 @interface MainScene()
 
 
@@ -132,17 +143,30 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
 - (void)moveNode:(SKNode*)sprite
       withVelocity:(CGPoint)velocity
 {
-    NSLog(@"Moving node with velocty %@", NSStringFromCGPoint(velocity));
     CGPoint amountToMove = CGPointMake(velocity.x * _deltaTime,
                                        velocity.y * _deltaTime);
     sprite.position = CGPointMake(sprite.position.x + amountToMove.x,
                                   sprite.position.y + amountToMove.y);
 }
 
+static inline CGFloat ScalarSign(CGFloat a)
+{
+    return a >= 0 ? 1 : -1;
+}
+
 - (void)rotateSprite:(SKNode*)node
          toDirection:(CGPoint)direction
 {
-    node.zRotation = atan2f(direction.y, direction.x);
+    CGFloat targetAngle = atan2f(direction.y, direction.x);
+    NSLog(@"targetAngle: %g", targetAngle);
+    CGFloat shortest = ScalarShortestAngleBetween(node.zRotation, targetAngle);
+    CGFloat amountToRotate = (4 * M_PI) *_deltaTime;
+    if (ABS(shortest) < amountToRotate)
+        amountToRotate = ABS(shortest);
+    else
+        amountToRotate = amountToRotate;
+    
+    node.zRotation += ScalarSign(shortest) * amountToRotate;
 }
 
 - (void)addBackground
