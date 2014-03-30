@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
 {
     NSTimeInterval _lastUpdate;
     NSTimeInterval _deltaTime;
+    CGPoint _zombieVelocity;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
         [self spawnZombie];
         [self addFrameTimeLabel];
         [self addBackground];
+        _zombieVelocity = CGPointZero;
     }
     return self;
 }
@@ -58,7 +60,7 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     _lastUpdate = currentTime;
     [self updateFrameTimeLabel:_deltaTime];
     
-    [self moveZombie];
+    [self moveZombieWithVelocity:_zombieVelocity];
 }
 
 - (void)addFrameTimeLabel
@@ -69,6 +71,17 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     labelNode.name = kLabelFrameTime;
     labelNode.zPosition = MainSceneZ_UI;
     [self addChild:labelNode];
+}
+
+- (CGPoint)getVelocityOfNode:(SKNode*)node toward:(CGPoint)point
+{
+    CGPoint offset = CGPointMake(point.x - node.position.x,
+                                 point.y - node.position.y);
+    CGFloat length = sqrtf(pow(offset.x, 2) + pow(offset.y, 2));
+    offset = CGPointMake(offset.x / length, offset.y / length);
+    CGPoint velocity = CGPointMake(offset.x * kVelocityZombie,
+                                   offset.y * kVelocityZombie);
+    return velocity;
 }
 
 - (void)updateFrameTimeLabel:(NSTimeInterval)timeInterval
@@ -91,19 +104,20 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     [self addChild:zombie];
 }
 
-- (void)moveZombie
+- (void)moveZombieWithVelocity:(CGPoint)velocity
 {
     [self enumerateChildNodesWithName:kSpriteZombie1
                            usingBlock:^(SKNode *node, BOOL *stop)
     {
         [self moveNode:node
-            withVelocity:CGPointMake(kVelocityZombie, 0)];
+            withVelocity:velocity];
     }];
 }
 
 - (void)moveNode:(SKNode*)sprite
       withVelocity:(CGPoint)velocity
 {
+    NSLog(@"Moving node with velocty %@", NSStringFromCGPoint(velocity));
     CGPoint amountToMove = CGPointMake(velocity.x * _deltaTime,
                                        velocity.y * _deltaTime);
     sprite.position = CGPointMake(sprite.position.x + amountToMove.x,
@@ -118,6 +132,45 @@ typedef NS_ENUM(NSUInteger, MainSceneZ)
     background.zPosition = MainSceneZ_Background;
     [self addChild:background];
     background.position = CGPointZero;
+}
+
+#pragma mark - Touches
+//TODO: DRY!
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+    {
+        _zombieVelocity = [self getVelocityOfNode:node
+                                           toward:location];
+    }];
+}
+
+//TODO: DRY!
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+     {
+         _zombieVelocity = [self getVelocityOfNode:node
+                                            toward:location];
+     }];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+     {
+         _zombieVelocity = [self getVelocityOfNode:node
+                                            toward:location];
+     }];
 }
 
 @end
