@@ -13,6 +13,8 @@
 static NSString* const kSpriteBackground = @"background";
 static NSString* const kSpriteZombie1 = @"zombie1";
 
+static long long kArc4RandmoMax = 0x100000000;
+
 //Labels
 static NSString* const kLabelFrameTime = @"kLabelFrameTime";
 
@@ -38,6 +40,11 @@ static inline CGFloat ScalarShortestAngleBetween(
     return angle;
 }
 
+static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
+{
+    return floorf(((double)arc4random() / kArc4RandmoMax) * (max - min) + min);
+}
+
 @interface MainScene()
 
 
@@ -59,7 +66,10 @@ static inline CGFloat ScalarShortestAngleBetween(
         [self addFrameTimeLabel];
         [self addBackground];
         _zombieVelocity = CGPointZero;
-    }
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnEnemy)
+                                                                                            onTarget:self],
+                                                                           [SKAction waitForDuration:2.0]]]]];
+        }
     return self;
 }
 
@@ -119,6 +129,20 @@ static inline CGFloat ScalarShortestAngleBetween(
             deltaY <= kVelocityZombie * _deltaTime)
             _zombieVelocity = CGPointZero;
     }];
+}
+
+#pragma mark - Spawning
+- (void)spawnEnemy
+{
+    SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:@"enemy"];
+    enemy.zPosition = MainSceneZ_MostTop;
+    
+    enemy.position = CGPointMake(self.size.width + enemy.size.width/2,
+                                 ScalarRandomRange(enemy.size.height/2,
+                                                   self.size.height - enemy.size.height/2));
+    [self addChild:enemy];
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/2 duration:2.0];
+    [enemy runAction:[SKAction sequence:@[actionMove, [SKAction removeFromParent]]]];
 }
 
 - (void)spawnZombie
