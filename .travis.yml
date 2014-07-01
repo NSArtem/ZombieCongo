@@ -1,3 +1,4 @@
 language: objective-c
-script: xcodebuild -project ZombieCongo.xcodeproj -target ZombieCongo -sdk iphonesimulator7.1
-script: xcodebuild -project ZombieCongo.xcodeproj -target ZombieCongo -sdk iphonesimulator7.0
+xcode_project: ZombieCongo.xcodeproj
+xcode_scheme: ZombieCongo
+xcode_sdk: iphonesimulator7.0
