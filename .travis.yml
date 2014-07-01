@@ -1,9 +1,5 @@
-# ZombieCongo Game
-# Artem Abramov, 2014
-
 language: objective-c
 
-# Whitelist branches
 branches:
 	only:
 		- master;
