@@ -26,4 +26,9 @@
     [super tearDown];
 }
 
+- (void)testRun
+{
+    XCTAssert(true, @"Dummy assert");
+}
+
 @end
