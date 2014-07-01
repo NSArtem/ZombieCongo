@@ -1,4 +1,14 @@
+# ZombieCongo Game
+# Artem Abramov, 2014
+
 language: objective-c
+
+# Whitelist branches
+branches:
+	only:
+		- master;
+
+
 xcode_project: ZombieCongo.xcodeproj
 xcode_scheme: ZombieCongo
 xcode_sdk: iphonesimulator7.0
