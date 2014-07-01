@@ -47,6 +47,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 @interface MainScene()
 
+@property (nonatomic, strong) SKAction *zombieAnimation;
 
 @end
 
@@ -69,8 +70,48 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnEnemy)
                                                                                             onTarget:self],
                                                                            [SKAction waitForDuration:2.0]]]]];
+        NSMutableArray *textures = [NSMutableArray array];
+        for (int i = 1; i < 4; i++)
+        {
+            NSString *textureName = [NSString stringWithFormat:@"zombie%d", i];
+            SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+            [textures addObject:texture];
         }
+        
+        for (int i = 4; i > 1; i--)
+        {
+            NSString *textureName = [NSString stringWithFormat:@"zombie%d", i];
+            SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+            [textures addObject:texture];
+        }
+        
+        _zombieAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+        
+        [self runAction:[SKAction repeatActionForever: [SKAction sequence:@[
+                                                                            [SKAction performSelector:@selector(spawnCat) onTarget:self],
+                                                                            [SKAction waitForDuration:1.0]]]]];
+
+    }
     return self;
+}
+
+- (void)startZombieAnimation
+{
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+     {
+         [node runAction:[SKAction repeatActionForever:_zombieAnimation]
+                 withKey:@"animation"];
+     }];
+}
+
+- (void)stopZombieAnimation
+{
+    [self enumerateChildNodesWithName:kSpriteZombie1
+                           usingBlock:^(SKNode *node, BOOL *stop)
+     {
+         [node removeActionForKey:@"animation"];
+     }];
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -127,7 +168,10 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         CGFloat deltaY = fabsf(node.position.y - _lastTapLocation.y);
         if (deltaX <= kVelocityZombie * _deltaTime &&
             deltaY <= kVelocityZombie * _deltaTime)
+        {
             _zombieVelocity = CGPointZero;
+            [self stopZombieAnimation];
+        }
     }];
 }
 
@@ -154,6 +198,20 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     [self addChild:zombie];
 }
 
+- (void)spawnCat {
+    // 1
+    SKSpriteNode *cat =
+    [SKSpriteNode spriteNodeWithImageNamed:@"cat"];
+    cat.zPosition = MainSceneZ_Monsters;
+    cat.position = CGPointMake( ScalarRandomRange(0, self.size.width), ScalarRandomRange(0, self.size.height));
+    cat.xScale = 0;
+    cat.yScale = 0; [self addChild:cat];
+    // 2
+    SKAction *appear = [SKAction scaleTo:1.0 duration:0.5]; SKAction *wait = [SKAction waitForDuration:10.0];
+    SKAction *disappear = [SKAction scaleTo:0.0 duration:0.5]; SKAction *removeFromParent = [SKAction removeFromParent]; [cat runAction:
+                                                                                                                          [SKAction sequence:@[appear, wait, disappear, removeFromParent]]];
+}
+
 - (void)moveZombieWithVelocity:(CGPoint)velocity
 {
     [self enumerateChildNodesWithName:kSpriteZombie1
@@ -162,6 +220,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         [self moveNode:node
             withVelocity:velocity];
     }];
+    [self startZombieAnimation];
 }
 
 - (void)moveNode:(SKNode*)sprite
