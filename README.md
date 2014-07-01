@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Arthor/ZombieCongo.svg?branch=master)](https://travis-ci.org/Arthor/ZombieCongo)
+
 # ZombieCongo
 Example game from ["iOS Games by Tutorials by Ray Wenderlich"](http://www.raywenderlich.com/store/ios-games-by-tutorials)
 
