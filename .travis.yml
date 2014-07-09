@@ -4,6 +4,12 @@ branches:
     only:
         - master
 
+# Work around to fix building:
+# https://github.com/travis-ci/travis-ci/issues/2179
+before_install:
+	- brew update
+	- brew upgrade xctool
+
 
 xcode_project: ZombieCongo.xcodeproj
 xcode_scheme: ZombieCongo
