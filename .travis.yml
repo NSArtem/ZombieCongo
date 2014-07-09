@@ -7,4 +7,4 @@ branches:
 
 xcode_project: ZombieCongo.xcodeproj
 xcode_scheme: ZombieCongo
-xcode_sdk: iphonesimulator7.0
+xcode_sdk: iphonesimulator7.1
